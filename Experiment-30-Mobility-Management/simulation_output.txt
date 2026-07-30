@@ -1,0 +1,8 @@
+
+Simulation Results
+----------------------
+Handover Count = 3353
+Average Delay = 49.91 ms
+Average Throughput = 9.98 Mbps
+Average Signaling Load = 7.06 messages
+Failure Probability = 0.095
