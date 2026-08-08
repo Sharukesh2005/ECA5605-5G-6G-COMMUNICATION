@@ -1,0 +1,19 @@
+
+============================================
+ ENERGY-EFFICIENT WIRELESS SENSOR NETWORK
+============================================
+
+Number of Sensor Nodes      : 10
+Simulation Rounds           : 1000
+
+Conventional Method
+Total Energy Consumed       : 26.8869 J
+Total Packets Transmitted   : 10000
+
+Proposed Energy-Efficient Method
+Total Energy Consumed       : 20.8213 J
+Total Packets Transmitted   : 6376
+
+Energy Saving               : 22.56 %
+Packet Reduction            : 36.24 %
+============================================
