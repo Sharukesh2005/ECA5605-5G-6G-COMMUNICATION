@@ -1,0 +1,42 @@
+clc; clear; close all;
+
+% Beamforming Parameters
+Antennas = [2 4 8 16 32];              % Number of antenna elements
+Gain = 10*log10(Antennas);             % Beamforming gain (dB)
+BeamWidth = [90 45 22.5 11.25 5.625];  % Beam width (degrees)
+
+% Main lobe directions
+Theta = [-60 -30 0 30 60];             % Degrees
+LobeGain = ones(size(Theta));          % Normalized gain
+
+% Display Results
+disp(table(Antennas',Gain',BeamWidth',...
+    'VariableNames',{'Antennas','Gain_dB','BeamWidth_Deg'}));
+
+% Plots
+figure;
+
+subplot(2,2,1)
+bar(Antennas,Gain);
+title('Beamforming Gain');
+xlabel('Number of Antennas');
+ylabel('Gain (dB)');
+grid on;
+
+subplot(2,2,2)
+plot(Antennas,BeamWidth,'-o','LineWidth',2);
+title('Beam Width');
+xlabel('Number of Antennas');
+ylabel('Beam Width (Degrees)');
+grid on;
+
+subplot(2,2,3)
+polarplot(deg2rad(Theta),LobeGain,'o-','LineWidth',2);
+title('Main Lobe Direction');
+
+subplot(2,2,4)
+plot(Antennas,Gain,'-s','LineWidth',2);
+title('Antennas vs Gain');
+xlabel('Number of Antennas');
+ylabel('Gain (dB)');
+grid on;

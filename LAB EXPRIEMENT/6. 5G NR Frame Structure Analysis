@@ -1,0 +1,41 @@
+clc; clear; close all;
+
+mu = 0:4;                          % Numerology Index
+SCS = [15 30 60 120 240];          % Subcarrier Spacing (kHz)
+Slot = [1 0.5 0.25 0.125 0.0625];  % Slot Duration (ms)
+Symbols = 14 * ones(1,5);          % OFDM Symbols per Slot
+
+disp(table(mu',SCS',Slot',Symbols',...
+    'VariableNames',{'Numerology','SCS_kHz','Slot_ms','OFDM_Symbols'}));
+
+% Plots
+figure;
+
+subplot(2,2,1)
+bar(mu,SCS);
+title('Subcarrier Spacing');
+xlabel('Numerology (\mu)');
+ylabel('SCS (kHz)');
+grid on;
+
+subplot(2,2,2)
+plot(SCS,Slot,'-o','LineWidth',2);
+title('Slot Duration');
+xlabel('SCS (kHz)');
+ylabel('Slot Duration (ms)');
+grid on;
+
+subplot(2,2,3)
+bar(SCS,Symbols);
+title('OFDM Symbols per Slot');
+xlabel('SCS (kHz)');
+ylabel('Number of Symbols');
+ylim([0 16]);
+grid on;
+
+subplot(2,2,4)
+plot(mu,SCS,'-s','LineWidth',2);
+title('Numerology vs SCS');
+xlabel('Numerology (\mu)');
+ylabel('SCS (kHz)');
+grid on;
